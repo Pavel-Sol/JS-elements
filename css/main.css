@@ -1,0 +1,262 @@
+/* ------------ОБНУЛЕНИЕ-------- */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  line-height: 1;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+ul li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* ----------шрифты---------------- */
+@font-face {
+  font-family: 'Gilroy-300';
+  src: url('../fonts/Gilroy-Light300.eot');
+  src: url('../fonts/Gilroy-Light300.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-Light300.woff') format('woff'),
+    url('../fonts/Gilroy-Light300.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy-400';
+  src: url('../fonts/Gilroy-Regular400.eot');
+  src: url('../fonts/Gilroy-Regular400.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-Regular400.woff') format('woff'),
+    url('../fonts/Gilroy-Regular400.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy-500';
+  src: url('../fonts/Gilroy-Medium500.eot');
+  src: url('../fonts/Gilroy-Medium500.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-Medium500.woff') format('woff'),
+    url('../fonts/Gilroy-Medium500.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gilroy-700';
+  src: url('../fonts/Gilroy-Bold700.eot');
+  src: url('../fonts/Gilroy-Bold700.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Gilroy-Bold700.woff') format('woff'),
+    url('../fonts/Gilroy-Bold700.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* -------------------------- */
+body {
+  background: rgb(242, 248, 248);
+  padding: 0;
+  margin: 0;
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1110px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  height: 100%;
+}
+
+section {
+  height: 100vh;
+}
+
+/* --------------------------------------- */
+/* временно */
+/* #s1 {
+  background-color: rgb(47, 0, 255);
+}
+
+#s2 {
+  background-color: chartreuse;
+}
+
+#s3 {
+  background-color: rgb(168, 24, 113);
+}
+
+#s4 {
+  background-color: rgb(3, 163, 236);
+} */
+
+/* ---------- header ----------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 110px;
+  background-color: rgb(159, 70, 241);
+  border-bottom-right-radius: 100%;
+  transition: all 0.7s ease 0s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.46);
+}
+
+.header.active {
+  border-radius: 0;
+  width: 3000px;
+  height: 3000px;
+}
+
+.header__burder {
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  top: 22px;
+  left: 22px;
+  transform: rotate(-180deg);
+  transition: all 0.2s ease 0s;
+}
+
+.header__burder.active {
+  transform: rotate(0deg);
+}
+
+.header__burder::after,
+.header__burder::before {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background-color: #ffffff;
+  left: 0;
+  transition: all 0.2s ease 0s;
+}
+
+.header__burder::before {
+  top: 0;
+}
+
+.header__burder::after {
+  bottom: 0;
+}
+
+.header__burder.active::before {
+  transform: rotate(-45deg);
+  left: -4px;
+  width: 50%;
+  top: 7px;
+}
+
+.header__burder.active::after {
+  transform: rotate(45deg);
+  left: -4px;
+  width: 50%;
+  bottom: 7px;
+}
+
+
+.header__burder span {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  top: 13px;
+  background-color: #ffffff;
+}
+
+.header__menu {
+  opacity: 0;
+  /* transform: translate(-320%, 0px); */
+  transition: all 0.2s ease 0s;
+  display: inline-block;
+  margin: 100px 0px 0px 100px;
+}
+
+.header.active .header__menu {
+  opacity: 1;
+  /* transform: translate(0px, 0px); */
+}
+
+.header__menu li {
+  margin: 30px;
+}
+
+.header__menu__link {
+  font-family: Gilroy-500;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+/* -------------- offer --------------- */
+.offer .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.offer__title {
+  font-family: Gilroy-500;
+  letter-spacing: 2px;
+  font-size: 40px;
+  text-align: right;
+  max-width: 500px;
+  color: rgb(96, 13, 173);
+}
+
+.offer__title span {
+  font-size: 55px;
+}
