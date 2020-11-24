@@ -3,4 +3,7 @@
         font-size: 30px;
     }
 
+    .tabs__list {
+        flex-wrap: wrap;
+    }
 }

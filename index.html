@@ -8,12 +8,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <!-- ШРИФТ -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
-      rel="stylesheet"
-    />
-   
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/media.css" />
@@ -25,13 +19,13 @@
     </div>
       <ul class="header__menu">
         <li>
-          <a class="header__menu__link" href="#s2">Слайдер</a>
+          <a class="header__menu__link" href="#tabs">Табы</a>
         </li>
         <li>
-          <a class="header__menu__link" href="#s2">Табы</a>
+          <a class="header__menu__link" href="#accordeon">Аккордеон</a>
         </li>
         <li>
-          <a class="header__menu__link" href="#s4">Аккордион</a>
+          <a class="header__menu__link" href="#slider">Слайдер</a>
         </li>
       </ul>
    </header>
@@ -43,9 +37,131 @@
       </h1>
      </div>
    </section>
-   <section id="s2"></section>
-   <section id="s3"></section>
-   <section id="s4">d</section>
+   <section id="tabs">
+     <div class="container">
+       <div class="tabs__content">
+         <ul class="tabs__list">
+            <li class="tabs__item active" data-tab = "tab1">
+              # Tab 1
+            </li>
+            <li class="tabs__item" data-tab = "tab2">
+              # Tab 2
+            </li>
+            <li class="tabs__item" data-tab = "tab3">
+              # Tab 3
+           </li>
+           <li class="tabs__item" data-tab = "tab4">
+              # Tab 4
+          </li>
+         </ul>
+         <ul class="tabs__body__list">
+           <li class="tabs__body__item active tab1">
+             <div class="tabs__body__item__head">
+              <div class="tabs__body__item__head__title">
+                <span>Tab № 1</span><br> 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+              </div>
+              <div class="tabs__body__item__head__img"></div>
+             </div>
+             <div class="tabs__body__item__desc">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores rem sapiente blanditiis ab nihil laudantium ipsam id harum! Repellendus, asperiores. Quos possimus facere blanditiis! Possimus laudantium inventore cum officiis dolore.
+             </div>
+           </li>
+           <li class="tabs__body__item tab2">
+            <div class="tabs__body__item__head">
+             <div class="tabs__body__item__head__title">
+               <span>Tab № 2</span><br> 
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+             </div>
+             <div class="tabs__body__item__head__img"></div>
+            </div>
+            <div class="tabs__body__item__desc">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores rem sapiente blanditiis ab nihil laudantium ipsam id harum! Repellendus, asperiores. Quos possimus facere blanditiis! Possimus laudantium inventore cum officiis dolore.
+            </div>
+          </li>
+          <li class="tabs__body__item tab3">
+            <div class="tabs__body__item__head">
+             <div class="tabs__body__item__head__title">
+               <span>Tab № 3</span><br> 
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+             </div>
+             <div class="tabs__body__item__head__img"></div>
+            </div>
+            <div class="tabs__body__item__desc">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores rem sapiente blanditiis ab nihil laudantium ipsam id harum! Repellendus, asperiores. Quos possimus facere blanditiis! Possimus laudantium inventore cum officiis dolore.
+            </div>
+          </li>
+          <li class="tabs__body__item tab4">
+            <div class="tabs__body__item__head">
+             <div class="tabs__body__item__head__title">
+               <span>Tab № 4</span><br> 
+               Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+             </div>
+             <div class="tabs__body__item__head__img"></div>
+            </div>
+            <div class="tabs__body__item__desc">
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores rem sapiente blanditiis ab nihil laudantium ipsam id harum! Repellendus, asperiores. Quos possimus facere blanditiis! Possimus laudantium inventore cum officiis dolore.
+            </div>
+          </li>
+         </ul>
+       </div>
+     </div>
+   </section>
+   <section id="accordeon">
+     <div class="container">
+       <ul class="accordeon__content">
+         <li class="accordeon__item">
+           <div class="accordeon__item__head">
+             <p class="accordeon__item__head__title">
+               Accordion item # 1
+             </p>
+             <div class="accordeon__item__head__plus"></div>
+           </div>
+           <div class="accordeon__item__body">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi delectus natus qui adipisci hic ad beatae tempora sed, eveniet odio laudantium exercitationem magni odit. Tenetur voluptatum sit ullam cum quis.
+            </p>
+           </div>
+         </li>
+         <li class="accordeon__item">
+          <div class="accordeon__item__head">
+            <p class="accordeon__item__head__title">
+              Accordion item # 2
+            </p>
+            <div class="accordeon__item__head__plus"></div>
+          </div>
+          <div class="accordeon__item__body">
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi delectus natus qui adipisci hic ad beatae tempora sed, eveniet odio laudantium exercitationem magni odit. Tenetur voluptatum sit ullam cum quis.</p>
+          </div>
+        </li>
+        <li class="accordeon__item">
+          <div class="accordeon__item__head">
+            <p class="accordeon__item__head__title">
+              Accordion item # 3
+            </p>
+            <div class="accordeon__item__head__plus"></div>
+          </div>
+          <div class="accordeon__item__body">
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi delectus natus qui adipisci hic ad beatae tempora sed, eveniet odio laudantium exercitationem magni odit. Tenetur voluptatum sit ullam cum quis.</p>
+          </div>
+        </li>
+        <li class="accordeon__item">
+          <div class="accordeon__item__head">
+            <p class="accordeon__item__head__title">
+              Accordion item # 4
+            </p>
+            <div class="accordeon__item__head__plus"></div>
+          </div>
+          <div class="accordeon__item__body">
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi delectus natus qui adipisci hic ad beatae tempora sed, eveniet odio laudantium exercitationem magni odit. Tenetur voluptatum sit ullam cum quis.</p>
+          </div>
+        </li>
+       </ul>
+     </div>
+   </section>
+   <section id="slider">
+     <div class="container"></div>
+   </section>
     <!-- --------------мой файл JS-------------------->
     <script src="js/script.js"></script>
     <!--------------- fontawesome ---------------->
