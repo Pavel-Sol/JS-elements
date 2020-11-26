@@ -46,6 +46,8 @@ tabsContent.addEventListener('click', function (event) {
     setTimeout(() => {
         document.querySelector(`.${desiredClass}`).classList.add('active')
     }, 300);
+
+    // document.querySelector(`.${desiredClass}`).classList.add('active')
 })
 
 // Аккордеон ---------------------------------
@@ -73,4 +75,28 @@ for (let i = 0; i < accordeonItemHead.length; i++) {
         }
     })
 }
-// -----------------------------------------------
+// Слайдер------------------------------------
+const sliderPrew = document.querySelector('.slider__control__prew')
+const sliderNext = document.querySelector('.slider__control__next')
+let sliderItems = document.querySelectorAll('.slider__item')
+let countSliders = 0
+
+sliderNext.addEventListener('click', function () {
+    sliderItems[countSliders].classList.add('hidden')
+    if (countSliders == sliderItems.length - 1) {
+        countSliders = 0
+    } else {
+        countSliders++
+    }
+    sliderItems[countSliders].classList.remove('hidden')
+})
+
+sliderPrew.addEventListener('click', function () {
+    sliderItems[countSliders].classList.add('hidden')
+    if (countSliders == 0) {
+        countSliders = sliderItems.length - 1
+    } else {
+        countSliders--
+    }
+    sliderItems[countSliders].classList.remove('hidden')
+})

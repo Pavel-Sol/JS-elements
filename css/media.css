@@ -1,3 +1,5 @@
+@media screen and (max-width: 768px) {}
+
 @media screen and (max-width: 500px) {
     .offer__title {
         font-size: 30px;
@@ -6,4 +8,11 @@
     .tabs__list {
         flex-wrap: wrap;
     }
-}
+
+    .slider__item {
+        max-width: 90%;
+    }
+
+    .slider__item img {
+        height: 370px;
+    }
