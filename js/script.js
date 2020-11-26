@@ -100,3 +100,19 @@ sliderPrew.addEventListener('click', function () {
     }
     sliderItems[countSliders].classList.remove('hidden')
 })
+
+// Модальное окно -------------------------------------------
+
+let popupOpen = document.querySelector('.popup__btn__open')
+let popupClose = document.querySelector('.popup__btn__close')
+let popupOverlay = document.querySelector('.popup__overlay')
+
+popupOpen.addEventListener('click', function () {
+    popupOverlay.classList.add('active')
+    body.classList.add('lock')
+})
+
+popupClose.addEventListener('click', function () {
+    popupOverlay.classList.remove('active')
+    body.classList.remove('lock')
+})

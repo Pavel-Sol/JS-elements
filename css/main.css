@@ -102,7 +102,7 @@ ul li {
 }
 
 
-/* -------------------------- */
+/* ---------- Общие стили ---------------- */
 body {
   background: rgb(242, 248, 248);
   padding: 0;
@@ -126,23 +126,21 @@ section {
   color: rgb(27, 26, 26);
 }
 
-/* --------------------------------------- */
-/* временно */
-/* #s1 {
-  background-color: rgb(47, 0, 255);
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
-#s2 {
-  background-color: chartreuse;
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-#s3 {
-  background-color: rgb(168, 24, 113);
-}
-
-#s4 {
-  background-color: rgb(3, 163, 236);
-} */
 
 /* ---------- header ----------- */
 .header {
@@ -467,4 +465,149 @@ section {
   border-right: 50px solid rgb(134, 27, 233);
 }
 
-/* ---------------------------------------------- */
+/*------------------- popup ------------------- */
+.popup__content {
+  text-align: center;
+}
+
+.popup__pointer__text {
+  font-size: 25px;
+  text-transform: uppercase;
+  font-family: Gilroy-700;
+  text-align: center;
+  letter-spacing: 2px;
+  color: rgb(134, 27, 233);
+  margin-bottom: 30px;
+}
+
+.popup__pointer__arrow {
+  position: relative;
+  width: 7px;
+  height: 50px;
+  background: rgb(134, 27, 233);
+  display: inline-block;
+
+  animation-name: up-down;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.popup__pointer__arrow::after,
+.popup__pointer__arrow::before {
+  position: absolute;
+  content: '';
+  width: 7px;
+  height: 25px;
+  background: rgb(134, 27, 233);
+  bottom: -4px;
+}
+
+.popup__pointer__arrow::after {
+  right: -7px;
+  transform: rotate(45deg);
+}
+
+.popup__pointer__arrow::before {
+  left: -7px;
+  transform: rotate(-45deg);
+}
+
+/* popup arrow animation */
+
+@keyframes up-down {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(0px, 30px) scale(1.2);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/* ----------- */
+.popup__btn__open {
+  display: inline-block;
+  margin: 70px 0px 0px 0px;
+  padding: 15px 40px;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: linear-gradient(rgba(96, 13, 173, 1), rgba(176, 100, 247, 1));
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4), -3px -3px 6px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  letter-spacing: 2px;
+  font-family: Gilroy-700;
+  font-size: 20px;
+}
+
+.popup__overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  z-index: 30;
+  display: none;
+}
+
+.popup__overlay.active {
+  display: block;
+}
+
+.popup__overlay__body {
+  position: fixed;
+  max-width: 400px;
+  min-height: 200px;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  z-index: 31;
+  padding: 40px;
+  text-align: center;
+  color: rgb(27, 26, 26);
+  font-family: Gilroy-500;
+  font-size: 16px;
+  border: 5px solid rgba(176, 100, 247, 1);
+  border-radius: 5px;
+}
+
+.popup__title {
+  font-family: Gilroy-700;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.popup__btn__close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 5px;
+  right: 5px;
+}
+
+.popup__btn__close::after,
+.popup__btn__close::before {
+  position: absolute;
+  content: '';
+  background-color: #141313;
+  width: 100%;
+  height: 3px;
+  left: 0;
+}
+
+.popup__btn__close::after {
+  top: 13px;
+  transform: rotate(45deg);
+}
+
+.popup__btn__close::before {
+  bottom: 14px;
+  transform: rotate(-45deg);
+}
