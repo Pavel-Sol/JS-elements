@@ -107,12 +107,27 @@ let popupOpen = document.querySelector('.popup__btn__open')
 let popupClose = document.querySelector('.popup__btn__close')
 let popupOverlay = document.querySelector('.popup__overlay')
 
-popupOpen.addEventListener('click', function () {
+
+popupClose.addEventListener('click', close)
+popupOpen.addEventListener('click', open)
+
+function open() {
     popupOverlay.classList.add('active')
     body.classList.add('lock')
-})
+}
 
-popupClose.addEventListener('click', function () {
+function close() {
     popupOverlay.classList.remove('active')
     body.classList.remove('lock')
+}
+
+
+popupOverlay.addEventListener('click', function (e) {
+
+    if (!e.target.closest('.popup__overlay__body')) {
+        popupOverlay.classList.remove('active')
+        body.classList.remove('lock')
+    }
 })
+
+// -------------------------
