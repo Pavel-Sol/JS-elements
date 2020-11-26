@@ -43,11 +43,8 @@ tabsContent.addEventListener('click', function (event) {
     for (let i = 0; i < tabsBodyItemS.length; i++) {
         tabsBodyItemS[i].classList.remove('active')
     }
-    setTimeout(() => {
-        document.querySelector(`.${desiredClass}`).classList.add('active')
-    }, 300);
 
-    // document.querySelector(`.${desiredClass}`).classList.add('active')
+    document.querySelector(`.${desiredClass}`).classList.add('active')
 })
 
 // Аккордеон ---------------------------------
