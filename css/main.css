@@ -101,10 +101,19 @@ ul li {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Digital';
+  src: url('../fonts/DigitalPlaySt.eot');
+  src: url('../fonts/DigitalPlaySt.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/DigitalPlaySt.woff') format('woff'),
+    url('../fonts/DigitalPlaySt.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /* ---------- Общие стили ---------------- */
 body {
-  background: rgb(242, 248, 248);
+  background: rgb(229, 231, 231);
   padding: 0;
   margin: 0;
 }
@@ -611,4 +620,37 @@ section {
 .popup__btn__close::before {
   bottom: 14px;
   transform: rotate(-45deg);
+}
+
+/*------------------- timer ------------------- */
+
+/* .test {
+  letter-spacing: 5px;
+  background-color: rgba(96, 13, 173, 1);
+  font-size: 45px;
+  font-family: Digital;
+  font-style: normal;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #600dad, 0 0 80px #600dad, 0 0 90px #600dad, 0 0 100px #600dad, 0 0 150px #600dad;
+  padding: 120px;
+} */
+
+.timer__content {
+  max-width: 600px;
+  min-width: 200px;
+  padding: 20px;
+  background-color: rgba(96, 13, 173, 1);
+  margin: 0px auto;
+}
+
+.timer__large {
+  display: flex;
+  justify-content: center;
+}
+
+.timer__large__item {
+  text-align: center;
+  font-family: Gilroy-700;
+  margin: 0px 15px;
+  font-size: 18px;
 }
