@@ -128,3 +128,80 @@ popupOverlay.addEventListener('click', function (e) {
 })
 
 // Таймеры ----------------------------------------------
+// большой счетчик
+let timerObject = {}
+
+let start = setInterval(() => {
+    getTime('2021-03-31')
+}, 1000);
+
+function getTime(deadline) {
+
+    let timeRemaining = Date.parse(deadline) - Date.parse(new Date())
+    let seconds = Math.floor(timeRemaining / 1000 % 60)
+    let minutes = Math.floor(timeRemaining / 1000 / 60 % 60)
+    let hours = Math.floor(timeRemaining / 1000 / 60 / 60 % 24)
+    let days = Math.floor(timeRemaining / 1000 / 60 / 60 / 24)
+
+
+    timerObject.timeRemaining = timeRemaining
+    timerObject.seconds = seconds
+    timerObject.minutes = minutes
+    timerObject.hours = hours
+    timerObject.days = days
+
+    outputOnDisplay(timerObject)
+}
+
+
+function outputOnDisplay(timerObject) {
+
+    for (const key in timerObject) {
+        if (timerObject[key] < 10) {
+            timerObject[key] = '0' + timerObject[key]
+        }
+    }
+
+    let timerBlock = document.querySelector('.timer__large')
+    timerBlock.querySelector('.days').textContent = timerObject.days
+    timerBlock.querySelector('.hours').textContent = timerObject.hours
+    timerBlock.querySelector('.minutes').textContent = timerObject.minutes
+    timerBlock.querySelector('.seconds').textContent = timerObject.seconds
+
+
+    if (timerObject.timeRemaining <= 0 || isNaN(Math.floor(timerObject.timeRemaining))) {
+        clearInterval(start)
+
+        timerBlock.querySelector('.days').textContent = '00'
+        timerBlock.querySelector('.hours').textContent = '00'
+        timerBlock.querySelector('.minutes').textContent = '00'
+        timerBlock.querySelector('.seconds').textContent = '00'
+        document.querySelector('.timer__title__large').textContent += ' остановлен'
+        return
+    }
+}
+
+// Малый счетчик
+let counterTimeDown = 3600
+let timeBlock = document.querySelector('.timer__small__number')
+
+let intervalStart = setInterval(timeRunning, 1000)
+
+function timeRunning() {
+
+    if (counterTimeDown == 0) {
+        clearInterval(intervalStart)
+    }
+
+    let minutes = Math.floor(counterTimeDown / 60)
+    let seconds = Math.floor(counterTimeDown % 60)
+
+    if (seconds < 10) {
+        timeBlock.innerHTML = `${minutes} : 0${seconds}`
+    } else {
+        timeBlock.innerHTML = `${minutes} : ${seconds}`
+    }
+
+    counterTimeDown--
+}
+// ------------------------------------------------

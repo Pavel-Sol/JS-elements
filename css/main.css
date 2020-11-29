@@ -638,19 +638,49 @@ section {
 .timer__content {
   max-width: 600px;
   min-width: 200px;
-  padding: 20px;
+  padding: 30px 30px;
   background-color: rgba(96, 13, 173, 1);
   margin: 0px auto;
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+.timer__title {
+  font-family: Gilroy-700;
+  margin: 15px 15px 25px 15px;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .timer__large {
   display: flex;
   justify-content: center;
+  margin: 0px 0px 60px 0px;
 }
 
 .timer__large__item {
   text-align: center;
   font-family: Gilroy-700;
   margin: 0px 15px;
-  font-size: 20px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.num {
+  margin: 5px 10px 20px 10px;
+  font-family: Digital;
+  font-size: 45px;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 40px #600dad, 0 0 80px #600dad, 0 0 90px #600dad, 0 0 100px #600dad, 0 0 150px #600dad;
+  min-width: 90px;
+}
+
+.timer__small__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer__small__number {
+  min-width: 200px;
 }
