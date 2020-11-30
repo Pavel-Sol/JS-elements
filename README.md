@@ -25,4 +25,4 @@ with Date object, setInterval function, etc.
 ---------------
 - html
 - css
-- JS
+- JS.
