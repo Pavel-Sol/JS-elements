@@ -262,3 +262,13 @@ galleryPrew.addEventListener('click', function () {
     }
 })
 // -----------------------------------------------------
+window.addEventListener('resize', function () {
+
+    if (document.body.clientHeight < 520) {
+        let sectionHeight = document.querySelectorAll('section')
+
+        for (let i = 0; i < sectionHeight.length; i++) {
+            sectionHeight[i].style.height = 'auto'
+        }
+    }
+})
