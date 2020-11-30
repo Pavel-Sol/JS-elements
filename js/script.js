@@ -204,4 +204,61 @@ function timeRunning() {
 
     counterTimeDown--
 }
-// ------------------------------------------------
+// Галерея ---------------------------------------------
+
+let galleryContent = document.querySelector('.gallery__content')
+let galleryPopup = document.querySelector('.gallery__popup')
+let popupImg = document.querySelector('.popup__img')
+let galleryImages = document.querySelectorAll('.gallery__link img')
+let neededImg = 0
+
+galleryContent.addEventListener('click', function (e) {
+    e.preventDefault()
+
+    if (e.target.closest('.gallery__link')) {
+        galleryPopup.classList.add('active')
+        body.classList.add('lock')
+        popupImg.src = e.target.src
+
+
+        // номер изобр
+        for (let i = 0; i < galleryImages.length; i++)
+            if (galleryImages[i] == e.target) {
+                neededImg = i
+            }
+
+    }
+})
+
+document.querySelector('.gallery__close').addEventListener('click', function () {
+    galleryPopup.classList.remove('active')
+    body.classList.remove('lock')
+})
+
+
+//переключение
+let galleryNext = document.querySelector('.gallery__next')
+let galleryPrew = document.querySelector('.gallery__prew')
+
+galleryNext.addEventListener('click', function () {
+
+    if (neededImg == galleryImages.length - 1) {
+        neededImg = 0
+        popupImg.src = galleryImages[neededImg + 1].src
+    } else {
+        popupImg.src = galleryImages[neededImg + 1].src
+        neededImg++
+    }
+})
+
+galleryPrew.addEventListener('click', function () {
+
+    if (neededImg == 0) {
+        neededImg = galleryImages.length - 1
+        popupImg.src = galleryImages[neededImg - 1].src
+    } else {
+        popupImg.src = galleryImages[neededImg - 1].src
+        neededImg--
+    }
+})
+// -----------------------------------------------------
