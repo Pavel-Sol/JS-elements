@@ -262,8 +262,9 @@ galleryPrew.addEventListener('click', function () {
     }
 })
 // -----------------------------------------------------
-window.addEventListener('resize', function () {
 
+// при изменении clientHeight
+window.addEventListener('resize', function () {
     if (document.body.clientHeight < 520) {
         let sectionHeight = document.querySelectorAll('section')
 

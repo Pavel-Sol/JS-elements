@@ -242,12 +242,28 @@ section {
 
 .header__menu li {
   margin: 30px;
+  position: relative;
 }
 
 .header__menu__link {
   font-family: Gilroy-500;
   font-size: 18px;
   text-transform: uppercase;
+}
+
+.header__menu li::before {
+  position: absolute;
+  content: '';
+  background-color: #ffffff;
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: -10px;
+  transition: all 0.3s ease 0s;
+}
+
+.header__menu li:hover::before {
+  width: 100%;
 }
 
 /* -------------- offer --------------- */
